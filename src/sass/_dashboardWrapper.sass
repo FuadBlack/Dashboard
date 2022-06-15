@@ -1,0 +1,33 @@
+.dashboard-wrapper
+    @include flex(stretch)
+    @include tablet
+        flex-direction: column
+
+    .dashboard-wrapper-main
+        flex-grow: 1
+        padding-right: calc($sideBarWidth - 10px)
+        @include tablet
+            padding-right: 0
+            width: 100%
+        .revenue-month
+            width: 95%
+            margin: 30px 0
+            padding: 20px 30px
+            border-radius: $borderRadius
+            background-color: $mainBg
+            transform: translateX(15px)
+            box-shadow: rgba(149,157,165,0.2) 0px 8px 24px
+
+    .dashboard-wrapper-right
+        padding: 20px
+        width: $sideBarWidth
+        background-color: $mainBg
+        height: 100vh
+        border-top-left-radius: $borderRadius
+        border-bottom-left-radius: $borderRadius
+        position: fixed
+        top: 0
+        right: 0
+        @include tablet
+            position: relative
+            width: 100%

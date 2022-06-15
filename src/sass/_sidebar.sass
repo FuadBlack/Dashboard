@@ -1,0 +1,87 @@
+.sidebar
+    @include flex(stretch,flex-start)
+    flex-direction: column
+    padding: 10px 0
+    color: $txtColor
+    width: $sideBarWidth
+    background-color: $mainBg
+    height: 100vh
+    position: fixed
+    top: 0
+    z-index: 100
+    @include tablet
+        width: 100vw
+        background-color: $mainColor
+        color: $white
+        z-index: 1
+
+    .logo
+        @include flex()
+        width: $sideBarLogoWidth
+        margin-bottom: 40px
+        @include tablet
+            justify-content: space-between
+            padding: 0 $mobileSpacing
+            margin-bottom: $mobileSpacing
+
+        img
+            $size: 55px
+            width: $size
+            height: $size
+        .logo-close
+            display: none
+            cursor: pointer
+            i
+                font-size: 2rem
+            @include tablet
+                @include flex(center,flex-end)
+
+    .menu
+        @include flex(stretch,flex-start)
+        flex-direction: column
+        flex-grow: 1
+        .menu-item
+            @include flex(center,flex-start)
+            position: relative
+            margin-bottom: 1rem
+            padding-left: 20%
+            transition: all .2s ease-in-
+            @include tablet
+                padding-left: $mobileSpacing
+
+            &:hover
+                color: $mainColor
+                @include tablet
+                    color: $orange
+
+            &.active
+                font-weight: 700
+                color: $mainColor
+                @include tablet
+                    color: $white
+
+                &::before
+                    content: ''
+                    position: absolute
+                    height: 100%
+                    width: 5px
+                    left: 0
+                    top: 0
+                    background-color: $mainColor
+                    border-top-right-radius: 20px
+                    border-bottom-right-radius: 20px
+
+            .menu-item-icon
+                @include flex(center,center)
+                width: 40px
+                height: 40px
+                margin-right: 1.5rem
+                @include flex(center,center)
+                @include tablet
+                    margin-right: 1rem
+
+                i
+                    font-size: 1.5rem
+            &:last-child
+                margin-top: auto
+                cursor: pointer
